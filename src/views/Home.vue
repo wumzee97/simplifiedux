@@ -36,11 +36,9 @@ const questions = ref<IQuestionType[]>([
 ]);
 
 function handleSubmittedQuestion(value: IQuestionType) {
-  // console.log(question)
-  // const newQuestion = question
   questions.value.push(value);
-  console.log(questions.value);
 }
+
 function handleDeleteQuestion(index: number){
   if (index > -1) {
     questions.value.splice(index, 1);
@@ -55,7 +53,7 @@ function handleDeleteQuestion(index: number){
       <div class="col-span-2 hidden lg:block h-screen bg-gray-50">
         <AppSideBar />
       </div>
-      <div class="lg:col-span-3 col-span-12 pt-6 overflow-y-scroll pb-56">
+      <div class="lg:col-span-3 col-span-12 pt-6 overflow-y-scroll pb-56 no-scrollbar">
         <div class="flex justify-between mb-6">
           <p class="text-sm font-graphikBold text-title-text">QUESTIONS</p>
 

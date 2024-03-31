@@ -34,7 +34,6 @@ interface IQuestionType {
   type: string;
   questionType: string;
 }
-
 interface IUploadedFile {
   filename: string;
   fileSize: string;
@@ -115,6 +114,7 @@ const pointOptions = ref([
     value: "5",
   },
 ]);
+
 function getFileSize(size: number) {
   if (size > 1000000) {
     const mb = size / 1000000;
@@ -131,9 +131,20 @@ function onSubmit() {
   const questionData = {
     question: formData.value.question,
     type: formData.value.type,
-    questionType: formData.value.questionType
+    questionType: formData.value.questionType,
   };
   emit("submitQuestion", questionData);
+
+  formData.value = {
+    point: "",
+    duration: "",
+    type: "",
+    questionType: "text",
+    question: "",
+    file: null,
+    answer: "",
+    answerExplanation: "",
+  };
 }
 function handleUpload() {
   const file: File = formData.value.file!;
