@@ -9,7 +9,7 @@ const emit = defineEmits<{(e: "delete", v: number): void}>()
 </script>
 
 <template>
-  <div class="w-full border-border border min-h-[147px] bg-white p-4">
+  <div class="w-full border-border border min-h-[147px] bg-white p-4 cursor-pointer hover:border-primary hover:bg-opacity-70">
     <div class="flex justify-between border-b border-border pb-3">
       <p class="text-primary font-graphikMedium">{{ props.questionNumber }}</p>
       <IconDrag class=" cursor-move" />

@@ -12,7 +12,7 @@ const emit = defineEmits<{ (e: "click"): void }>();
 <template>
   <button @click="emit('click')"
     :type="props.type"
-    class="h-[50px] font-graphikMedium rounded-0 px-4"
+    class="h-[50px] font-graphikMedium rounded-0 px-4 hover:bg-opacity-90"
     :class="
       props.outlined
         ? 'border border-primary text-primary'
